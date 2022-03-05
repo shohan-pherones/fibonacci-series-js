@@ -1,10 +1,18 @@
 function fibonacciSeries(seriesNumbers){
-    const fibo = [0, 1];
-    for(let i = 2; i < seriesNumbers; i++){
-        fibo[i] = fibo[i -1] + fibo[i - 2];
+    if(typeof seriesNumbers != 'number'){
+        console.log('Please enter the number.')
     }
-    return fibo;
+    else if(seriesNumbers < 2){
+        console.log('Please enter the correct series limit.');
+    }
+    else{
+        const fibo = [0, 1];
+        for(let i = 2; i < seriesNumbers; i++){
+        fibo[i] = fibo[i -1] + fibo[i - 2];
+        }
+        return fibo;
+    }
 }
 
-const mySeries = fibonacciSeries(15);
+const mySeries = fibonacciSeries(1);
 console.log(mySeries);
